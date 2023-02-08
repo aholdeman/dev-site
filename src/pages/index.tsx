@@ -104,7 +104,14 @@ const links = [
     description:
       "Am I supposed to remember to post here?",
     color: "#1099A8",
-  }
+  },
+  {
+    text: "Daily Nietzsche",
+    url: "https://dailynietzschesignup.wordpress.com/",
+    description:
+      "You like Nietzsche??",
+    color: "#BC027F",
+  },
 ]
 
 const IndexPage: React.FC<PageProps> = () => {
