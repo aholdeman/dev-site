@@ -1,5 +1,6 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+// import { StaticImage } from 'gatsby-plugin-image'
 
 const pageStyles = {
   color: "#232129",
@@ -17,20 +18,12 @@ const headingAccentStyles = {
 const paragraphStyles = {
   marginBottom: 48,
 }
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+
 const listStyles = {
   marginBottom: 96,
   paddingLeft: 0,
 }
-const doclistStyles = {
-  paddingLeft: 0,
-}
+
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
@@ -45,14 +38,6 @@ const linkStyle = {
   verticalAlign: "5%",
 }
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
-
 const descriptionStyle = {
   color: "#232129",
   fontSize: 14,
@@ -61,34 +46,6 @@ const descriptionStyle = {
   lineHeight: 1.25,
 }
 
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
 
 const links = [
   {
@@ -115,6 +72,10 @@ const IndexPage: React.FC<PageProps> = () => {
         <br />
         <span style={headingAccentStyles}>— it's going to be a great time! 🎉🎉🎉</span>
       </h1>
+      <img
+        alt="Finn, a brown chihuahua pitbull, looking stoically at the camera"
+        src="https://abby-dev-site-images.s3.amazonaws.com/finnpic.jpg"
+      />
       <p style={paragraphStyles}>
         We're having fun, aren't we folks?
       </p>
@@ -139,4 +100,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Abby's Place!</title>
