@@ -80,7 +80,7 @@ const bioImgStyle = {
 
 const gridStyle = {
   display: "grid",
-  gridTemplateColumns: "repeat(4, 30%)",
+  gridTemplateColumns: "fit-content(1fr) fit-content(1fr)",
   gridTemplateRows: "repeat(2, 1fr)",
   gridColumnGap: "20px",
   gridRowGap: "10px"
