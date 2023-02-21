@@ -5,8 +5,9 @@ import NavHeader from "../components/nav-header"
 const pageStyles = {
   backgroundColor: "#F3EAFE",
   color: "#232129",
-  padding: 96,
-  width: "100%",
+  paddingTop: 96,
+  width: "100vw",
+  height: "100vh",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
@@ -110,7 +111,6 @@ const IndexPage: React.FC<PageProps> = () => {
           <div style={{ ...aboutMeGrid, ...anotherStyle }}>
             <h1 style = {headingAccentStyles}> Hi there!</h1>
             <p style={aboutMeText}>My name is Abby and I am a software developer living in Charlotte, NC. I graduated from the University of South Carolina in 2019 with a degree in Computer Science. In my spare time, you can find me building a new project or playing Pokemon Go out in the wild. This is my dog, Finn.</p>
-            <img style={bioImgStyle} alt="Finn, a brown chihuahua pitbull, looking stoically at the camera" src="https://abby-dev-site-images.s3.amazonaws.com/finnpic.jpg" />
           </div>
           <div style={{ ...gridItem1, ...anotherStyle }}> <ul>
             {links.map(link => (
