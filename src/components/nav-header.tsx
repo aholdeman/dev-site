@@ -2,10 +2,10 @@ import React from "react"
 import "@fontsource/space-grotesk";
 
 const navHeader = {
-  background: "#E6DEF1",
-  position: "fixed",
+  backgroundColor: "#E6DEF1",
   top: 0,
-  width: "100%"
+  width: "100%",
+  position: "fixed"
 }
 const nameCard = {
   color: "#201E1E",
