@@ -1,9 +1,12 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+import NavHeader from "../components/nav-header"
 
 const pageStyles = {
+  backgroundColor: "#F3EAFE",
   color: "#232129",
   padding: 96,
+  width: "100%",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 const headingStyles = {
@@ -109,6 +112,7 @@ const links = [
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
+    <> <NavHeader />
     <main style={pageStyles}>
       <h1 style={headingStyles}>
         Welcome to my ~ twisted mind
@@ -134,6 +138,7 @@ const IndexPage: React.FC<PageProps> = () => {
         ))}
       </ul>
     </main>
+    </>
   )
 }
 
