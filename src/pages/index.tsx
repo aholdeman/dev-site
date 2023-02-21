@@ -7,7 +7,7 @@ const pageStyles = {
   color: "#232129",
   paddingTop: 96,
   width: "100vw",
-  height: "100vh",
+  height: "100%",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
@@ -75,8 +75,8 @@ const links = [
 ]
 const bioImgStyle = {
   padding: "10px",
-  height: "50%",
-  width: "50%",
+  height: "auto",
+  width: "auto",
   boxSizing: "border-box"
 }
 
@@ -85,7 +85,8 @@ const gridStyle = {
   gridTemplateColumns: "fit-content(30%) fit-content(30%)",
   gridTemplateRows: "fit-content(50%) fit-content(50%)",
   gridColumnGap: "20px",
-  gridRowGap: "10px"
+  gridRowGap: "10px",
+  paddingLeft: "50px"
 }
 
 const anotherStyle = {
@@ -98,7 +99,7 @@ const aboutMeGrid = {
   gridArea: "1 / 1 / 3 / 2"
 }
 const gridItem1 = { gridArea: "auto / auto / auto / auto",   display: "flex",
-alignItems: "center"}
+alignItems: "center", paddingRight: "10px"}
 const gridItem2 = { gridArea: "2 / 2 / 3 / 3",   display: "flex",
 alignItems: "center",
 justifyContent: "center"}
@@ -109,7 +110,8 @@ const IndexPage: React.FC<PageProps> = () => {
       <main style={pageStyles}>
         <div style={gridStyle}>
           <div style={{ ...aboutMeGrid, ...anotherStyle }}>
-            <h1 style = {headingAccentStyles}> Hi there!</h1>
+          <img style={bioImgStyle} alt="Finn, a brown chihuahua pitbull, looking stoically at the camera" src="https://abby-dev-site-images.s3.amazonaws.com/abby_and_finn.jpg" />
+            <h1 style = {headingAccentStyles}> Hi there! 👋👋👋 </h1>
             <p style={aboutMeText}>My name is Abby and I am a software developer living in Charlotte, NC. I graduated from the University of South Carolina in 2019 with a degree in Computer Science. In my spare time, you can find me building a new project or playing Pokemon Go out in the wild. This is my dog, Finn.</p>
           </div>
           <div style={{ ...gridItem1, ...anotherStyle }}> <ul>
