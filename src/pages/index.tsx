@@ -1,36 +1,31 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+import NavHeader from "../components/nav-header"
 
 const pageStyles = {
+  backgroundColor: "#F3EAFE",
   color: "#232129",
   padding: 96,
+  width: "100%",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+
 const headingAccentStyles = {
+  padding: 10,
   color: "#663399",
 }
-const paragraphStyles = {
-  marginBottom: 48,
+const aboutMeText = {
+  color: "#232129",
+  fontSize: 14,
+  marginTop: 10,
+  marginBottom: 0,
+  lineHeight: 1.25,
+  fontWeight: 300,
+  maxWidth: 560,
+  padding: 10,
+  paddingTop: 0
 }
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
+
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
@@ -45,14 +40,6 @@ const linkStyle = {
   verticalAlign: "5%",
 }
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
-
 const descriptionStyle = {
   color: "#232129",
   fontSize: 14,
@@ -61,34 +48,6 @@ const descriptionStyle = {
   lineHeight: 1.25,
 }
 
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
 
 const links = [
   {
@@ -111,39 +70,70 @@ const links = [
     description:
       "You like Nietzsche??",
     color: "#BC027F",
-  },
+  }
 ]
+const bioImgStyle = {
+  padding: "10px",
+  height: "400px",
+  width: "95%"
+}
+
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 30%)",
+  gridTemplateRows: "repeat(2, 1fr)",
+  gridColumnGap: "20px",
+  gridRowGap: "10px"
+}
+const anotherStyle = {
+  backgroundColor: "#E6DEF1",
+  borderColor: "#201E1E",
+  borderStyle: "solid",
+
+}
+const aboutMeGrid = {
+  gridArea: "1 / 1 / 3 / 2",
+}
+const gridItem1 = { gridArea: "auto / auto / auto / auto",   display: "flex",
+alignItems: "center"}
+const gridItem2 = { gridArea: "2 / 2 / 3 / 3",   display: "flex",
+alignItems: "center",
+justifyContent: "center"}
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Welcome to my ~ twisted mind
-        <br />
-        <span style={headingAccentStyles}>— it's going to be a great time! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        We're having fun, aren't we folks?
-      </p>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={link.url}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <> <NavHeader />
+      <main style={pageStyles}>
+        <div style={gridStyle}>
+          <div style={{ ...aboutMeGrid, ...anotherStyle }}>
+            <img style={bioImgStyle} alt="Finn, a brown chihuahua pitbull, looking stoically at the camera" src="https://abby-dev-site-images.s3.amazonaws.com/finnpic.jpg" />
+            <h1 style = {headingAccentStyles}> Hi there!</h1>
+            <p style={aboutMeText}>My name is Abby and I am a software developer living in Charlotte, NC. I graduated from the University of South Carolina in 2019 with a degree in Computer Science. In my spare time, you can find me building a new project or playing Pokemon Go out in the wild.</p>
+          </div>
+          <div style={{ ...gridItem1, ...anotherStyle }}> <ul>
+            {links.map(link => (
+              <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
+                <span>
+                  <a
+                    style={linkStyle}
+                    href={link.url}
+                  >
+                    {link.text}
+                  </a>
+                  <p style={descriptionStyle}>{link.description}</p>
+                </span>
+              </li>
+            ))}
+          </ul> </div>
+          <div style={{...gridItem2, ...anotherStyle}}>
+            <p style={aboutMeText}>Blog coming soon!</p>
+          </div>
+        </div>
+      </main>
+    </>
   )
 }
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Abby's Place!</title>
