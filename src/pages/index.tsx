@@ -76,7 +76,7 @@ const links = [
 const bioImgStyle = {
   padding: "10px",
   height: "auto",
-  width: "auto",
+  width: "100%",
   boxSizing: "border-box"
 }
 
@@ -112,7 +112,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <div style={{ ...aboutMeGrid, ...anotherStyle }}>
           <img style={bioImgStyle} alt="Finn, a brown chihuahua pitbull, looking stoically at the camera" src="https://abby-dev-site-images.s3.amazonaws.com/abby_and_finn.jpg" />
             <h1 style = {headingAccentStyles}> Hi there! 👋👋👋 </h1>
-            <p style={aboutMeText}>My name is Abby and I am a software developer living in Charlotte, NC. I graduated from the University of South Carolina in 2019 with a degree in Computer Science. In my spare time, you can find me building a new project or playing Pokemon Go out in the wild. This is my dog, Finn.</p>
+            <p style={aboutMeText}>My name is Abby and I am a software developer living in Charlotte, NC. I graduated from the University of South Carolina in 2019 with a degree in Computer Science. In my spare time, you can find me building a new project or playing Pokemon Go out in the wild.</p>
           </div>
           <div style={{ ...gridItem1, ...anotherStyle }}> <ul>
             {links.map(link => (
