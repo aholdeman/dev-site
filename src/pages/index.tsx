@@ -22,12 +22,8 @@ const aboutMeText = {
   lineHeight: 1.25,
   fontWeight: 300,
   maxWidth: 560,
-  padding: 10
-}
-
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
+  padding: 10,
+  paddingTop: 0
 }
 
 const listItemStyles = {
@@ -67,6 +63,13 @@ const links = [
     description:
       "Am I supposed to remember to post here?",
     color: "#1099A8",
+  },
+  {
+    text: "Daily Nietzsche",
+    url: "https://dailynietzschesignup.wordpress.com/",
+    description:
+      "You like Nietzsche??",
+    color: "#BC027F",
   }
 ]
 const bioImgStyle = {
@@ -77,20 +80,25 @@ const bioImgStyle = {
 
 const gridStyle = {
   display: "grid",
-  gridColumnGap: "10px",
+  gridTemplateColumns: "repeat(4, 30%)",
+  gridTemplateRows: "repeat(2, 1fr)",
+  gridColumnGap: "20px",
   gridRowGap: "10px"
 }
 const anotherStyle = {
   backgroundColor: "#E6DEF1",
   borderColor: "#201E1E",
-  borderStyle: "solid"
+  borderStyle: "solid",
+
 }
 const aboutMeGrid = {
   gridArea: "1 / 1 / 3 / 2",
-  width: 500
 }
-const gridItem1 = { gridArea: "1 / 2 / 2 / 3" }
-const gridItem2 = { gridArea: "2 / 2 / 3 / 3" }
+const gridItem1 = { gridArea: "auto / auto / auto / auto",   display: "flex",
+alignItems: "center"}
+const gridItem2 = { gridArea: "2 / 2 / 3 / 3",   display: "flex",
+alignItems: "center",
+justifyContent: "center"}
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -100,9 +108,9 @@ const IndexPage: React.FC<PageProps> = () => {
           <div style={{ ...aboutMeGrid, ...anotherStyle }}>
             <img style={bioImgStyle} alt="Finn, a brown chihuahua pitbull, looking stoically at the camera" src="https://abby-dev-site-images.s3.amazonaws.com/finnpic.jpg" />
             <h1 style = {headingAccentStyles}> Hi there!</h1>
-            <p style={aboutMeText}>My name is Abby and I am a software developer living in Charlotte, NC. I graduated from the University of South Carolina in 2019 with a degree in Computer Science.</p>
+            <p style={aboutMeText}>My name is Abby and I am a software developer living in Charlotte, NC. I graduated from the University of South Carolina in 2019 with a degree in Computer Science. In my spare time, you can find me building a new project or playing Pokemon Go out in the wild.</p>
           </div>
-          <div style={{ ...gridItem1, ...anotherStyle }}> <ul style={listStyles}>
+          <div style={{ ...gridItem1, ...anotherStyle }}> <ul>
             {links.map(link => (
               <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
                 <span>
@@ -117,6 +125,9 @@ const IndexPage: React.FC<PageProps> = () => {
               </li>
             ))}
           </ul> </div>
+          <div style={{...gridItem2, ...anotherStyle}}>
+            <p style={aboutMeText}>Blog coming soon!</p>
+          </div>
         </div>
       </main>
     </>
